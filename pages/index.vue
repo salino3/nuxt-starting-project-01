@@ -3,30 +3,19 @@
     <section class="intro">
       <h1>Get the last tech news!</h1>
     </section>
-      <section class="featured-posts">
-        <nuxt-link :to="'/posts/' + 1" class="post-preview">
-      <article>
-        <div class="post-thumbnail" style="background-image: url('https://tse1.mm.bing.net/th?id=OIP.FrofFN4Fron88i3gnooF7wHaGa&pid=Api&rs=1&c=1&qlt=95&w=119&h=103')"></div>
-        <div class="post-content"></div>
-        <h1>Post title </h1>
-        <p>Preview text </p>
-      </article>
-      </nuxt-link>
-         <nuxt-link :to="'/posts/' + 2" class="post-preview">
-      <article >
-        <div class="post-thumbnail" style="background-image: url('https://tse1.mm.bing.net/th?id=OIP.FrofFN4Fron88i3gnooF7wHaGa&pid=Api&rs=1&c=1&qlt=95&w=119&h=103')"></div>
-        <div class="post-content"></div>
-        <h1>Post title </h1>
-        <p>Preview text </p>
-      </article>
-      </nuxt-link>
-
-    </section>
+    <PostList />
   </main>
 </template>
 
-<script >
 
+<script>
+import PostList from '@/components/Posts/PostList';
+
+export default {
+  components: {
+   PostList
+  }
+}
 </script>
 
 <style  scope>
@@ -37,6 +26,7 @@
   box-sizing: border-box;
   background-position: center;
   background-size: cover;
+  background-image: url("~assets/images/gato-blanco-01.jpg");
 }
 
 .intro h1 {
@@ -69,39 +59,4 @@
   justify-content: center;
 }
 
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
-}
 </style>
