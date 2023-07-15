@@ -24,8 +24,8 @@
 
 
 <script >
-import AppControlInput from '@/components/UI-Components/AppControlInput.vue';
-import AppButton from '@/components/UI-Components/AppButton.vue';
+import AppControlInput from '@/components/UI/AppControlInput.vue';
+import AppButton from '@/components/UI/AppButton.vue';
 
 export default {
   components: {
