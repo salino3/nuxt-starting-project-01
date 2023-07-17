@@ -1,19 +1,53 @@
+ <!-- npm install --save .vuex
+ npm list vue vue-server-renderer
+ npm update vue vue-server-renderer
+ npm install vue@2.7.14 vue-server-renderer@2.7.14 (Vue y Vuex deben tener la misma versión)
+
+ -->
 <template>
   <main class="home-page">
     <section class="intro">
       <h1>Get the last tech news!</h1>
     </section>
-    <PostList />
+    <PostList :posts="loadedPosts" /> 
   </main>
 </template>
-
 
 <script>
 import PostList from '@/components/Posts/PostList';
 
 export default {
   components: {
-   PostList
+    PostList
+  },
+  asyncData(context, callback) {
+   setTimeout(() => {
+      callback(null, {loadedPosts: [
+        {
+          id: "1",
+          isAdmin: true,
+          thumbnail: "https://tse1.mm.bing.net/th?id=OIP.FrofFN4Fron88i3gnooF7wHaGa&pid=Api&rs=1&c=1&qlt=95&w=119&h=103",
+          title: "Hello there",
+          previewText: "This is my first post!",
+        },
+        {
+          id: "2",
+          isAdmin: false,
+          thumbnail: "https://tse1.mm.bing.net/th?id=OIP.FrofFN4Fron88i3gnooF7wHaGa&pid=Api&rs=1&c=1&qlt=95&w=119&h=103",
+          title: "Hello there, this is the second post",
+          previewText: "This is my second post!",
+        }
+       ]
+      })
+    }, 1500);
+  },
+  // data() {
+  //   return {
+  //     loadedPosts: []
+  //   }
+  // },
+  created() {
+
   }
 }
 </script>

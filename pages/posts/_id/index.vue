@@ -2,17 +2,17 @@
   <div class="single-post-page">
     <section clss="post-title">
       <h1 class="title">
-        Title
+        {{ loadedPost.title }}
       </h1>
       <div class="post-details">
         <div class="post-detail">
-          Last update on XXX
+         Last update on {{ loadedPost.updatedDate }}
         </div>
         <div class="post-detail">
-          Write by Name
+          Write by {{ loadedPost.author }}
         </div>
       </div>
-      <p class="post-content">Content of the post</p>
+      <p class="post-content">{{ loadedPost.content }}</p>
     </section>
     <section class="post-feedback">
      <p>Let me know what you think about the post, send a mail to
@@ -24,6 +24,24 @@
 
 <script>
 
+export default {
+  asyncData(context, callback) {
+     setTimeout(() => {
+      callback(new Error(), {
+        loadedPost:  {
+          id: "3",
+          isAdmin: true,
+          thumbnail: "https://tse1.mm.bing.net/th?id=OIP.FrofFN4Fron88i3gnooF7wHaGa&pid=Api&rs=1&c=1&qlt=95&w=119&h=103",
+          title: "This Post (ID: " + context.params.id + ")",
+          author: "Joe",
+          updatedDate: new Date(),
+          content: "Some content",
+          previewText: "This is my post!",
+        },
+      })
+     }, 1000)
+  }
+}
 </script>
 
 <style scope>
