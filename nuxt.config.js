@@ -53,5 +53,15 @@ module.exports = {
     extend(config, ctx) {
 
     }
+  },
+
+    /*
+  ** Vue Devtools
+  */
+  vue: {
+    config: {
+      devtools: true
+    }
   }
+
 }

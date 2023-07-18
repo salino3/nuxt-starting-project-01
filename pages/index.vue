@@ -9,7 +9,7 @@
     <section class="intro">
       <h1>Get the last tech news!</h1>
     </section>
-    <PostList :posts="loadedPosts" /> 
+    <PostList :posts="loadedPosts" />
   </main>
 </template>
 
@@ -46,9 +46,7 @@ export default {
   //     loadedPosts: []
   //   }
   // },
-  created() {
 
-  }
 }
 </script>
 
