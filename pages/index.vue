@@ -41,13 +41,20 @@ export default {
       })
     }, 1500);
   },
-  // data() {
+  //   data() {
   //   return {
   //     loadedPosts: []
   //   }
   // },
+    computed: {
+    loadedPosts() {
+     return this.$store.getters.loadedPosts
+    }
+  }
 
-}
+ };
+
+
 </script>
 
 <style  scope>
